@@ -95,8 +95,10 @@ class OptimizerChain
         $this->logger->info("Executing `{$command}`");
 
         $process = exec($command);
+        
+        $this->logger->info($process);
 
-        $this->logResult($process);
+        //$this->logResult($process);
     }
 
     protected function logResult(Process $process)
