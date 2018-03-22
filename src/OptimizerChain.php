@@ -94,11 +94,7 @@ class OptimizerChain
 
         $this->logger->info("Executing `{$command}`");
 
-        $process = new Process($command);
-
-        $process
-            ->setTimeout($this->timeout)
-            ->run();
+        $process = exec($command);
 
         $this->logResult($process);
     }
